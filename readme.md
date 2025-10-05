@@ -40,8 +40,8 @@ O projeto foi construído com uma arquitetura em camadas (Services, Data) e util
 
 2.  **Clonar o Repositório:**
     ```bash
-    git clone 
-    cd 
+    git clone https://github.com/Akiozin/Desenvolvimento-de-software-em-CSharp-CP1.git
+    cd Desenvolvimento-de-software-em-CSharp-CP1
     ```
 
 3.  **Executar a Aplicação:**
