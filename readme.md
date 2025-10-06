@@ -107,3 +107,4 @@ A aplicação inicia com alguns dados pré-carregados para facilitar os testes. 
 ## 👥 Integrantes
 
 -   Guilherme Akio – RM: 98582
+-   Guilherme Morais - RM: 55198
