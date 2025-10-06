@@ -199,8 +199,64 @@ public class Program
 
     static void MenuAdoNet()
     {
-        // Implementação do menu ADO.NET
-        Console.Clear();
-        Console.WriteLine("Menu ADO.NET ainda não implementado.");
+        bool voltar = false;
+        while (!voltar)
+        {
+            Console.Clear();
+            Console.WriteLine("╔══════════════════════════════════════╗");
+            Console.WriteLine("║            ADO.NET DIRETO            ║");
+            Console.WriteLine("╠══════════════════════════════════════╣");
+            Console.WriteLine("║           CONSULTAS E RELATÓRIOS     ║");
+            Console.WriteLine("║ 1 - Relatório de Vendas Completo     ║");
+            Console.WriteLine("║ 2 - Faturamento por Cliente          ║");
+            Console.WriteLine("║ 3 - Produtos Sem Venda               ║");
+            Console.WriteLine("║ 4 - Análise de Performance de Vendas ║");
+            Console.WriteLine("║                                      ║");
+            Console.WriteLine("║           OPERAÇÕES DE DADOS         ║");
+            Console.WriteLine("║ 5 - Inserir Pedido Completo          ║");
+            Console.WriteLine("║ 6 - Atualizar Estoque em Lote        ║");
+            Console.WriteLine("║ 7 - Processar Devolução              ║");
+            Console.WriteLine("║ 8 - Excluir Pedidos Antigos          ║");
+            Console.WriteLine("║                                      ║");
+            Console.WriteLine("║           UTILITÁRIOS                ║");
+            Console.WriteLine("║ 9 - Testar Conexão                   ║");
+            Console.WriteLine("║                                      ║");
+            Console.WriteLine("║ 0 - Voltar ao Menu Principal         ║");
+            Console.WriteLine("╚══════════════════════════════════════╝");
+            Console.Write("Escolha uma opção: ");
+
+            var opcao = Console.ReadLine();
+
+            try
+            {
+                switch (opcao)
+                {
+                    case "1": AdoService.RelatorioVendasCompleto(); break;
+                    case "2": AdoService.FaturamentoPorCliente(); break;
+                    case "3": AdoService.ProdutosSemVenda(); break;
+                    case "4": AdoService.AnalisarPerformanceVendas(); break;
+                    case "5": AdoService.InserirPedidoCompleto(); break;
+                    case "6": AdoService.AtualizarEstoqueLote(); break;
+                    case "7": AdoService.ProcessarDevolucao(); break;
+                    case "8": AdoService.ExcluirDadosAntigos(); break;
+                    case "9": AdoService.TestarConexao(); break;
+                    case "0": voltar = true; break;
+                    default:
+                        Console.WriteLine("Opção inválida!");
+                        Thread.Sleep(1000);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"\nOcorreu um erro na operação ADO.NET: {ex.Message}");
+            }
+
+            if (!voltar && opcao != "0")
+            {
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+            }
+        }
     }
 }
